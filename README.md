@@ -34,7 +34,8 @@ environnement comprenant :
 ## Gestion dynamique des terminaux avec Entra ID
 
 Conception de plus de 120 groupes et filtres dynamiques permettant l'attribution automatisée
-des applications, profils de configuration et stratégies de sécurité (Projets\Enta-ID.md).
+des applications, profils de configuration et stratégies de sécurité.
+👉 projets/entra-id.md
 
 ## Windows Autopilot
 

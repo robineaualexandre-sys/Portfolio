@@ -35,7 +35,7 @@ environnement comprenant :
 
 Conception de plus de 120 groupes et filtres dynamiques permettant l'attribution automatisée
 des applications, profils de configuration et stratégies de sécurité.
-👉 projets/entra-id.md
+👉 Projets/Entra-ID.md
 
 ## Windows Autopilot
 

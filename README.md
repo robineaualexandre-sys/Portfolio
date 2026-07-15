@@ -2,57 +2,22 @@
 
 ## Administrateur Microsoft 365 | Intune | Entra ID
 
-### À propos
+Responsable technique de l'administration Microsoft 365 pour plus de
+1 190 utilisateurs répartis sur deux établissements scolaires.
 
-Administrateur Microsoft 365 spécialisé dans la gestion des identités,
-l'administration des terminaux et la sécurité des environnements Microsoft.
+### Chiffres clés
 
-Je suis responsable technique de l'exploitation et de l'évolution d'un
-environnement comprenant :
-
-- Plus de 1 190 utilisateurs
-- Plus de 780 terminaux Windows
-- Plus de 120 groupes et filtres dynamiques Microsoft Entra ID
+- 1 190 utilisateurs Microsoft 365
+- 780+ terminaux Windows administrés
+- 120+ groupes dynamiques Entra ID
+- 100+ applications déployées
 - 2 établissements
 
-### Technologies principales
+## Études de cas
 
-- Microsoft 365
-- Microsoft Intune
-- Microsoft Entra ID
+- Gestion dynamique des terminaux avec Microsoft Entra ID
 - Windows Autopilot
 - Microsoft Defender for Endpoint
-- PowerShell
-- Microsoft Graph
-- Active Directory
-- Hyper-V
-
----
-
-# Projets
-
-## Gestion dynamique des terminaux avec Entra ID
-
-Conception de plus de 120 groupes et filtres dynamiques permettant l'attribution automatisée
-des applications, profils de configuration et stratégies de sécurité.
-
-## Windows Autopilot
-
-Déploiement automatisé des postes au sein d'un environnement Microsoft
-Entra ID via Windows Autopilot.
-
-## Microsoft Defender for Endpoint
-
-Déploiement et sécurisation du parc informatique.
-
-## Windows Hello for Business
-
-Renforcement de la sécurité des identités utilisateurs.
-
-## Canva SSO
-
-Mise en œuvre de l'authentification unique via Microsoft 365.
-
-## Automatisation PowerShell
-
-Scripts d'administration Intune, remédiations et automatisations Microsoft Graph.
+- Windows Hello for Business & Credential Guard
+- Canva SSO
+- Automatisation PowerShell & Microsoft Graph

@@ -2,15 +2,23 @@
 
 ## Administrateur Microsoft 365 | Intune | Entra ID
 
-Responsable technique de l'administration Microsoft 365 pour plus de 1 190 utilisateurs répartis sur deux établissements scolaires.
+Responsable technique de l'administration Microsoft 365 pour plus de
+1 190 utilisateurs répartis sur deux établissements scolaires.
+
+Spécialisé dans Microsoft Intune, Microsoft Entra ID, Windows Autopilot,
+la sécurisation des identités et l'automatisation PowerShell.
 
 ## Chiffres clés
 
-- 1 190 utilisateurs Microsoft 365
-- 780+ terminaux Windows administrés
-- 120+ groupes dynamiques et filtres Intune
-- 100+ applications déployées
-- 2 établissements scolaires
+✅ 1 190 utilisateurs Microsoft 365
+
+✅ 780+ terminaux Windows administrés
+
+✅ 120+ groupes dynamiques et filtres Intune
+
+✅ 100+ applications déployées
+
+✅ 2 établissements scolaires
 
 ---
 
@@ -32,10 +40,15 @@ Responsable technique de l'administration Microsoft 365 pour plus de 1 190 utili
 ## Études de cas
 
 - projets/entra-id.md
+  
 - projets/autopilot.md
+  
 - projets/microsoft-defender.md
+  
 - projets/windows-hello.md
+  
 - projets/canva-sso.md
+  
 - projets/powershell.md
 
 ---

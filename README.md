@@ -39,17 +39,17 @@ la sécurisation des identités et l'automatisation PowerShell.
 
 ## Études de cas
 
-- projets/entra-id.md
+- [Gestion dynamique des terminaux avec Microsoft Entra ID](./projets/entra-id.md)
   
-- projets/autopilot.md
+- [Windows Autopilot](./projets/autopilot.md)
   
-- projets/microsoft-defender.md
+- [Microsoft Defender for Endpoint](./projets/microsoft-defender.md)
   
-- projets/windows-hello.md
+- [Windows Hello for Business](./projets/windows-hello.md)
   
-- projets/canva-sso.md
+- [Canva SSO](./projets/canva-sso.md)
   
-- projets/powershell.md
+- [Automatisation PowerShell & Microsoft Graph](./projets/powershell.md)
 
 ---
 

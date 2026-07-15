@@ -32,11 +32,11 @@ Responsable technique de l'administration Microsoft 365 pour plus de 1 190 utili
 ## Études de cas
 
 - projets/entra-id.md
-- [rojets/autopilot.md
-- [Microsoft Defender
-- [Windows Hellos-hello.md
-- [rojets/canva-sso.md
-- [Automatisation PowerShell & Microsoftdisponible sur demande.
+- projets/autopilot.md
+- projets/microsoft-defender.md
+- projets/windows-hello.md
+- projets/canva-sso.md
+- projets/powershell.md
 
 ---
 

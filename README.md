@@ -30,6 +30,8 @@ la sécurisation des identités et l'automatisation PowerShell.
 - Windows Autopilot
 - Microsoft Defender for Endpoint
 - Windows Hello for Business
+- Windows LAPS
+- SSO / SAML
 - PowerShell
 - Microsoft Graph
 - Active Directory
@@ -39,17 +41,23 @@ la sécurisation des identités et l'automatisation PowerShell.
 
 ## Études de cas
 
-- [Gestion dynamique des terminaux avec Microsoft Entra ID](./projets/entra-id.md)
-  
 - [Windows Autopilot](./projets/autopilot.md)
-  
+
+- [Refonte de l'architecture de gestion Intune](./projets/architecture-intune.md)
+
+- [Gestion dynamique des terminaux avec Microsoft Entra ID](./projets/entra-id.md)
+
+- [Sécurisation des identités et des accès](./projets/securite-identites.md)
+
 - [Microsoft Defender for Endpoint](./projets/microsoft-defender.md)
-  
+
 - [Windows Hello for Business](./projets/windows-hello.md)
-  
+
+- [Automatisation et scripts de correction PowerShell](./projets/automatisation-powershell.md)
+
+- [Gouvernance Microsoft Teams et cycle de vie des identités](./projets/gouvernance-teams.md)
+
 - [Canva SSO](./projets/canva-sso.md)
-  
-- [Automatisation PowerShell & Microsoft Graph](./projets/powershell.md)
 
 ---
 

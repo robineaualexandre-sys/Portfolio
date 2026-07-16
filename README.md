@@ -51,8 +51,6 @@ la sécurisation des identités et l'automatisation PowerShell.
 
 - [Microsoft Defender for Endpoint](./projets/microsoft-defender.md)
 
-- [Windows Hello for Business](./projets/windows-hello.md)
-
 - [Automatisation et scripts de correction PowerShell](./projets/automatisation-powershell.md)
 
 - [Gouvernance Microsoft Teams et cycle de vie des identités](./projets/gouvernance-teams.md)

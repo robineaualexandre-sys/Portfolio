@@ -6,7 +6,7 @@ title: Sécurisation des identités et des accès | Portfolio
 
 ## Contexte
 
-Dans le cadre de la sécurisation du parc (postes Administratifs, Professeurs et Pédagogiques), plusieurs chantiers ont été menés pour renforcer la protection des comptes et des accès, sans complexifier l'expérience utilisateur au quotidien.
+Dans le cadre de la sécurisation du parc, plusieurs chantiers ont été menés pour renforcer la protection des comptes et des accès, sans complexifier l'expérience utilisateur au quotidien.
 
 ---
 
@@ -23,16 +23,13 @@ Dans le cadre de la sécurisation du parc (postes Administratifs, Professeurs et
 - Microsoft Intune
 - Microsoft Entra ID
 - Windows Hello for Business
-- Credential Guard
 - Windows LAPS
 
 ---
 
 ## Réalisation
 
-Déploiement d'une stratégie de Protection de compte (Sécurité du point de terminaison > Protection de compte) pour activer Windows Hello for Business sur les postes éligibles, via un groupe dédié "Appareils Windows Hello".
-
-Activation de la sécurité basée sur la virtualisation (Credential Guard) sur les machines Administratives, via le Catalogue de paramètres Intune, avec tests de non-régression sur connexions RDP/TSE avant généralisation.
+Déploiement d'une stratégie de Protection de compte (Sécurité du point de terminaison > Protection de compte) pour activer Windows Hello for Business, via un groupe dédié "Appareils Windows Hello", en remplacement progressif de l'authentification par mot de passe.
 
 Mise en place de groupes d'administration locale distincts selon le type de poste (Administratif, Professeur, Pédagogique), pour éviter les conflits de stratégies lorsqu'un même groupe utilisateur reçoit deux règles différentes sur une même machine — compartimentation des règles par profil plutôt que règle unique globale.
 
@@ -42,9 +39,8 @@ Mise en place de groupes d'administration locale distincts selon le type de post
 
 ## Résultats
 
-- Réduction des invites d'élévation de privilèges non maîtrisées
-- Suppression des conflits de stratégies liés aux doublons de groupes d'admin locaux
 - Authentification renforcée sans mot de passe sur les postes éligibles
+- Suppression des conflits de stratégies liés aux doublons de groupes d'admin locaux
 - Gestion du compte administrateur local industrialisée et traçable
 
 ---
@@ -54,6 +50,5 @@ Mise en place de groupes d'administration locale distincts selon le type de post
 - Microsoft Intune
 - Microsoft Entra ID
 - Windows Hello for Business
-- Credential Guard
 - Windows LAPS
 - Gestion des identités et des accès

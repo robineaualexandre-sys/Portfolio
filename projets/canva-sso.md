@@ -1,48 +1,33 @@
-# Canva SSO
+# Intégration Canva en SSO via Microsoft Entra ID
 
 ## Contexte
 
-Les utilisateurs disposaient déjà de comptes Microsoft 365.
+Éligibilité de l'établissement à l'offre Canva pour l'Éducation, avec la volonté 
+de proposer un accès simplifié et sécurisé à l'ensemble des utilisateurs du 
+domaine, sans gestion de mots de passe supplémentaires.
 
-L'objectif était de simplifier l'accès à Canva tout en évitant la multiplication des identifiants.
+## Objectif
 
----
+Permettre à tous les membres du domaine de se connecter à Canva avec leur compte 
+Microsoft existant, en configurant l'authentification unique (SSO) via SAML.
 
-## Objectifs
+## Actions menées
 
-- Simplifier l'authentification
-- Réduire les demandes de support
-- Centraliser la gestion des accès
-
----
-
-## Technologies utilisées
-
-- Microsoft Entra ID
-- SAML
-- Canva
-
----
-
-## Réalisation
-
-Intégration de Canva dans Microsoft Entra ID.
-
-Configuration de l'authentification unique (SSO) basée sur les comptes Microsoft 365.
-
----
+- Vérification de la compatibilité SSO entre Canva et Microsoft Entra ID 
+  (documentation croisée Canva + Microsoft)
+- Création d'un compte administrateur Canva dédié via un compte de service
+- Configuration de l'application d'entreprise dans Entra ID :
+  - URL de connexion SAML2 configurée
+  - Identificateur d'entité renseigné
+- Attribution manuelle du profil "Enseignants" aux comptes concernés, Entra ID 
+  ne permettant pas cette distinction automatiquement pour ce cas d'usage
 
 ## Résultats
 
-- Connexion simplifiée
-- Expérience utilisateur améliorée
-- Gestion centralisée des accès
+- Authentification unique fonctionnelle pour tous les membres du domaine
+- Suppression du besoin de gérer des identifiants Canva séparés
+- Accès facilité pour les enseignants dans leurs usages pédagogiques quotidiens
 
----
+## Compétences mobilisées
 
-## Compétences démontrées
-
-- Entra ID
-- SAML
-- Gestion des identités
-- SSO
+`Microsoft Entra ID` `SAML` `SSO` `Applications d'entreprise` `Gestion des identités`

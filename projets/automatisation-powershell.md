@@ -36,7 +36,7 @@ Un script corrige une clé de registre RDP (`RedirectionWarningDialogVersion` so
 
 Un script désactive l'hibernation sur les postes concernés via `powercfg`, avec vérification de l'état réel après exécution plutôt que de supposer la réussite de la commande.
 
-Un script désactive de façon contrôlée l'intégrité de la mémoire (HVCI) sur un sous-ensemble de postes présentant des incompatibilités matérielles ou logicielles, en corrigeant la clé `HypervisorEnforcedCodeIntegrity`.
+Un script désactive de façon contrôlée l'intégrité de la mémoire (HVCI/Credential Guard) sur un sous-ensemble de postes rencontrant des erreurs d'authentification en session RDP, en corrigeant la clé `HypervisorEnforcedCodeIntegrity`. Ce correctif priorise la disponibilité du poste sur un périmètre restreint et documenté, plutôt que de désactiver la fonctionnalité de façon générale sur le parc.
 
 Deux automatisations envisagées initialement via script ont depuis été remplacées par des solutions plus pérennes : le nettoyage des profils utilisateurs inactifs est désormais géré par une stratégie Intune native (Mode PC partagé), et un script de contournement pour la synchronisation OneDrive sur postes partagés — en place avant ma prise de poste — a été retiré après correction directe de la stratégie native concernée (Mode PC partagé avec prise en charge OneDrive).
 

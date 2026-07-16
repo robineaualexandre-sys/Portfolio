@@ -1,7 +1,3 @@
----
-title: Sécurisation des identités et des accès | Portfolio
----
-
 # Sécurisation des identités et des accès
 
 ## Contexte

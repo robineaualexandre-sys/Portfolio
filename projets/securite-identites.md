@@ -29,7 +29,7 @@ Dans le cadre de la sécurisation du parc, plusieurs chantiers ont été menés 
 
 ## Réalisation
 
-Déploiement d'une stratégie de Protection de compte (Sécurité du point de terminaison > Protection de compte) pour activer Windows Hello for Business, via un groupe dédié "Appareils Windows Hello", en remplacement progressif de l'authentification par mot de passe.
+Déploiement de Windows Hello for Business selon une architecture "liste blanche" : une stratégie globale désactive Windows Hello Entreprise par défaut sur l'ensemble du parc, puis une stratégie ciblée réactive la fonctionnalité uniquement pour le groupe "Appareils Windows Hello" (postes Professeurs et Administratifs), avec une politique de PIN définie (6 caractères minimum). Ce même périmètre fait l'objet d'une désactivation contrôlée de Credential Guard, pour résoudre des erreurs d'authentification rencontrées en session RDP sur ces postes.
 
 Mise en place de groupes d'administration locale distincts selon le type de poste (Administratif, Professeur, Pédagogique), pour éviter les conflits de stratégies lorsqu'un même groupe utilisateur reçoit deux règles différentes sur une même machine — compartimentation des règles par profil plutôt que règle unique globale.
 

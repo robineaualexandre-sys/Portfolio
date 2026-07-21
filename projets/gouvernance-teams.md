@@ -2,6 +2,8 @@
 title: Gouvernance Microsoft Teams et cycle de vie des identités | Portfolio
 ---
 
+{% include site-style.html %}
+
 # Gouvernance Microsoft Teams et cycle de vie des identités
 
 ## Contexte

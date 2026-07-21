@@ -2,6 +2,9 @@
 title: Canva SSO | Portfolio
 ---
 
+{% include site-style.html %}
+
+
 # Intégration Canva en SSO via Microsoft Entra ID
 
 ## Contexte

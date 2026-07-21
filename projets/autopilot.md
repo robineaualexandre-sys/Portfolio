@@ -2,8 +2,6 @@
 title: Windows Autopilot
 ---
 
-{% include site-style.html %}
-
 # Windows Autopilot
 
 ## Contexte

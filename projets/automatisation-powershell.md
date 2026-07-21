@@ -2,8 +2,6 @@
 title: Automatisation et scripts de correction PowerShell
 ---
 
-{% include site-style.html %}
-
 # Automatisation et scripts de correction PowerShell
 
 ## Contexte

@@ -1,3 +1,8 @@
+---
+---
+
+{% include figure-style.html %}
+
 # Alexandre Robineau
 
 ## Administrateur Microsoft 365 | Intune | Entra ID

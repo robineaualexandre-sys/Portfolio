@@ -2,8 +2,6 @@
 title: Sécurisation des identités et des accès
 ---
 
-{% include site-style.html %}
-
 # Sécurisation des identités et des accès
 
 ## Contexte

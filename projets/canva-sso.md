@@ -1,5 +1,5 @@
 ---
-title: Canva SSO | Portfolio
+title: Canva SSO
 ---
 
 {% include site-style.html %}

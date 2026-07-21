@@ -1,7 +1,7 @@
 ---
 ---
 
-{% include figure-style.html %}
+{% include site-style.html %}
 
 # Alexandre Robineau
 

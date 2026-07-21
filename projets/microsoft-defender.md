@@ -2,8 +2,6 @@
 title: Microsoft Defender for Endpoint
 ---
 
-{% include site-style.html %}
-
 # Microsoft Defender for Endpoint
 
 ## Contexte

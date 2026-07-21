@@ -37,13 +37,13 @@ Mise en place de plusieurs profils de déploiement selon la typologie de poste (
 ![Liste des profils de déploiement Autopilot]({{ site.baseurl }}/assets/images/autopilot/profils-deploiement-liste.png)
 *Une partie des profils de déploiement configurés dans Intune*
 
-Deux modes ont été utilisés selon le contexte : le mode automatique pour les postes sans utilisateur affecté, et le mode utilisateur assigné pour les postes nécessitant un compte standard...
+Deux modes ont été utilisés selon le contexte : le mode automatique pour les postes sans utilisateur affecté, et le mode utilisateur assigné pour les postes nécessitant un compte standard ou administrateur...
 
 ![Profil Autopilot en mode automatique]({{ site.baseurl }}/assets/images/autopilot/profil-autopilot-automatique.png)
 *Configuration en mode automatique, sans compte utilisateur affecté*
 
 ![Profil Autopilot en mode utilisateur assigné]({{ site.baseurl }}/assets/images/autopilot/profil-autopilot-utilisateur-assigne.png)
-*Configuration en mode utilisateur assigné, avec compte standard*
+*Configuration en mode utilisateur assigné, avec compte administrateur*
 
 L'assignation des profils repose sur une distinction claire entre les groupes dynamiques Autopilot, alimentés dès l'enrôlement via `devicePhysicalIds`, et les groupes dynamiques de production...
 

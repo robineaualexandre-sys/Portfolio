@@ -2,8 +2,6 @@
 title: Gestion dynamique des terminaux avec Microsoft Entra ID
 ---
 
-{% include site-style.html %}
-
 # Gestion dynamique des terminaux avec Microsoft Entra ID
 
 ## Contexte

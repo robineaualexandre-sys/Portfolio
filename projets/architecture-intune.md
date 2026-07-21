@@ -2,6 +2,9 @@
 title: Refonte de l'architecture de gestion Intune | Portfolio
 ---
 
+{% include site-style.html %}
+
+
 # Refonte de l'architecture de gestion Intune
 
 ## Contexte

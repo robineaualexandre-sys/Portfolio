@@ -2,6 +2,9 @@
 title: Automatisation et scripts de correction PowerShell | Portfolio
 ---
 
+{% include site-style.html %}
+
+
 # Automatisation et scripts de correction PowerShell
 
 ## Contexte

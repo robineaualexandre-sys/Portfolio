@@ -1,12 +1,15 @@
 ---
-title: Windows Autopilot | Portfolio
+title: Windows Autopilot
 ---
 
 # Windows Autopilot
 
 ## Contexte
 
-À mon arrivée, la préparation des postes reposait sur un déploiement d'images Acronis propagées via des disques durs externes, branchés manuellement sur chaque appareil. La mise en service nécessitait ensuite une connexion sur un compte administrateur local (non supprimé après coup), un renommage manuel de l'appareil, un redémarrage, une reconnexion, puis un rattachement au tenant via un compte Microsoft professionnel — une méthode chronophage et porteuse d'une dette de sécurité silencieuse.
+À mon arrivée, la préparation des postes reposait sur un déploiement d'images Acronis propagées via des disques durs externes...
+
+![Schéma avant/après du processus de déploiement]({{ site.baseurl }}/assets/images/autopilot/schema-avant-apres.png)
+*Passage d'un déploiement manuel par imagerie à un provisioning zero-touch*
 
 ---
 
@@ -29,21 +32,45 @@ title: Windows Autopilot | Portfolio
 
 ## Réalisation
 
-Mise en place d'une procédure reproductible d'intégration à Autopilot via l'OOBE (clé USB de préparation, script d'enrôlement PowerShell, vérification de l'affectation au profil de déploiement, suivi de la synchronisation et de l'état "En attente"), en remplacement complet du clonage d'image et de la préparation manuelle.
+Mise en place de plusieurs profils de déploiement selon la typologie de poste (pédagogique, professeurs/administratifs, administratifs)...
 
-Distinction entre deux logiques de groupes : les groupes Autopilot, alimentés dès l'enrôlement via `devicePhysicalIds` (étiquette de commande), utilisés uniquement pour la phase de déploiement initial ; et les groupes de production, alimentés ensuite via `deviceTrustType` et `displayName`, pour la gestion courante du poste.
+![Liste des profils de déploiement Autopilot]({{ site.baseurl }}/assets/images/autopilot/profils-deploiement-liste.png)
+*Une partie des profils de déploiement configurés dans Intune*
 
-Conception de trois profils de déploiement différenciés selon la typologie de poste : les postes Pédagogiques en mode automatique et compte standard sans affectation utilisateur ; les postes Professeurs et Administratifs en mode géré par utilisateur avec compte administrateur, l'affectation utilisateur n'étant activée que pour les postes Administratifs.
+Deux modes ont été utilisés selon le contexte : le mode automatique pour les postes sans utilisateur affecté, et le mode utilisateur assigné pour les postes nécessitant un compte standard...
+
+![Profil Autopilot en mode automatique]({{ site.baseurl }}/assets/images/autopilot/profil-autopilot-automatique.png)
+*Configuration en mode automatique, sans compte utilisateur affecté*
+
+![Profil Autopilot en mode utilisateur assigné]({{ site.baseurl }}/assets/images/autopilot/profil-autopilot-utilisateur-assigne.png)
+*Configuration en mode utilisateur assigné, avec compte standard*
+
+L'assignation des profils repose sur une distinction claire entre les groupes dynamiques Autopilot, alimentés dès l'enrôlement via `devicePhysicalIds`, et les groupes dynamiques de production...
+
+![Groupe dynamique Autopilot]({{ site.baseurl }}/assets/images/autopilot/groupe-dynamique-autopilot.png)
+*Groupe dynamique dédié à l'assignation du profil Autopilot*
+
+![Règle d'affectation du groupe dynamique Autopilot]({{ site.baseurl }}/assets/images/autopilot/regle-groupe-autopilot.png)
+*Règle basée sur `devicePhysicalIds`, alimentée dès l'enrôlement*
+
+![Groupe dynamique de production]({{ site.baseurl }}/assets/images/autopilot/groupe-dynamique-production.png)
+*Groupe dynamique utilisé une fois le poste provisionné*
+
+![Règle d'affectation du groupe dynamique de production]({{ site.baseurl }}/assets/images/autopilot/regle-groupe-production.png)
+*Règle basée sur les attributs classiques de l'appareil (nom, appartenance Entra ID...)*
 
 ---
 
 ## Résultats
 
-- Suppression du recours aux images Acronis et aux disques durs externes pour la préparation des postes
-- Élimination du compte administrateur local resté actif après imagerie — fermeture d'une dette de sécurité qui n'était plus tracée
-- Rattachement au tenant Entra ID automatisé dès le déballage, sans étape manuelle de renommage ou de reconnexion
+- Suppression du recours aux images Acronis...
+- Élimination du compte administrateur local...
+- Rattachement au tenant Entra ID automatisé...
 - Autopilot propagé à l'ensemble du parc, profils en production
 - Configuration adaptée automatiquement au type d'usage
+
+![Liste des appareils Autopilot enregistrés]({{ site.baseurl }}/assets/images/autopilot/appareils-autopilot-liste.png)
+*Vue des appareils avec leur profil affecté et leur état de synchronisation*
 
 ---
 

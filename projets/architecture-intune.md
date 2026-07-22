@@ -53,6 +53,9 @@ Premier chantier : revoir la convention de nommage des appareils, condition pré
 <figure>
   <img src="{{ site.baseurl }}/assets/images/architecture-intune/ancien-nommage-pedago.png" alt="Ancienne convention de nommage des appareils">
   <figcaption>Ancien système de nommage, informel et propre à chaque filière</figcaption>
+</figure>
+
+<figure>
   <img src="{{ site.baseurl }}/assets/images/architecture-intune/nommage-appareils.png" alt="Convention de nommage des appareils actuel">
   <figcaption>Nouvelle convention de nommage, structurée et cohérente</figcaption>
 </figure>

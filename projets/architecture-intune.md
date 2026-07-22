@@ -50,10 +50,10 @@ Exploration des Ensembles de stratégies pour tenter de fiabiliser le pré-provi
 
 ## Résultats
 
-- Réduction du nombre de groupes nécessaires à la gestion du parc
+- Réduction du nombre de stratégies Intune Admin d'environ 60 à une vingtaine, avant remontée progressive à 40 stratégies avec l'ajout de nouveaux besoins
+- Élimination des conflits récurrents (fond d'écran de verrouillage, PC partagé/OneDrive, Wi-Fi)
 - Élimination des doublons de machines dans les groupes dynamiques
-- Ciblage des stratégies spécifiques fiabilisé et simplifié grâce aux filtres
-- Architecture finale volontairement simplifiée après arbitrage entre deux approches
+- Ciblage des stratégies spécifiques fiabilisé et simplifié grâce aux 15 filtres dynamiques
 
 ---
 

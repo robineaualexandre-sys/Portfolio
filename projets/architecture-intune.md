@@ -6,7 +6,7 @@ title: Refonte de l'architecture de gestion Intune
 
 ## Contexte
 
-Avec la croissance du parc (plus de 780 terminaux répartis sur deux établissements), la gestion historique par groupes affectés manuellement montrait ses limites : délais de propagation des stratégies, perte de visibilité sur "qui est configuré comment", multiplication des groupes redondants.
+À mon arrivée, la solution Entra ID venait d'être déployée et l'équipe en place gérait les stratégies via Intune Education, ce qui générait de nombreux conflits ainsi qu'une duplication importante des groupes. L'ensemble des groupes fonctionnait en mode affecté manuel, sur un parc de plus de 780 terminaux répartis sur deux établissements. Cette situation entraînait des délais de propagation des stratégies, une perte de visibilité sur "qui est configuré comment", et un fouillis grandissant dans la console d'administration Intune.
 
 ---
 
@@ -31,6 +31,8 @@ Avec la croissance du parc (plus de 780 terminaux répartis sur deux établissem
 ## Réalisation
 
 Séparation des stratégies en deux catégories : les stratégies "immuables" (ex. blocage des jeux), déployées une fois pour toutes sur les grands groupes ("Tous les appareils"), et les stratégies "spécifiques", ciblées par filtres plutôt que par groupes dédiés.
+
+Premier chantier : revoir la convention de nommage des appareils, condition préalable indispensable à la mise en place de règles d'appartenance dynamique fiables. Les groupes ont ensuite été progressivement basculés du mode affecté manuel vers le mode dynamique. En parallèle, les stratégies ont été migrées d'Intune Education vers Intune Admin, conformément aux recommandations Microsoft : les stratégies de configuration sont désormais déployées via des filtres dynamiques, tandis que les applications sont assignées via des groupes dynamiques.
 
 Mise en place d'une convention de nommage `[Machines ciblées] Paramètre configuré` (ex. `[ADMIN] Credential Guard`, `[PROF] Wifi Profs`) pour identifier en un coup d'œil quelles machines sont concernées par chaque stratégie.
 

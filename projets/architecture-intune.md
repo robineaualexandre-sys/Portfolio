@@ -38,7 +38,7 @@ Mise en place d'une convention de nommage `[Machines ciblées] Paramètre config
 
 Migration progressive des groupes (TECHNO, STI, etc.) d'un mode affecté manuel vers un mode dynamique, avec des règles d'appartenance précises (`deviceTrustType`, `displayName`), après avoir identifié et corrigé un problème de doublons lié aux appareils "registered" vs "joined" dans Entra ID.
 
-Conception de trois filtres couvrant l'ensemble du parc (Professeurs, Pédagogique, Administratif), basés sur les conventions de nommage des machines et sur des catégories d'appareils, avec le type de jointure Entra systématiquement précisé pour éviter les erreurs de ciblage. Ces filtres sont devenus le mécanisme central de ciblage des stratégies spécifiques.
+Conception de 15 filtres dynamiques couvrant l'ensemble du parc, combinant type d'appareil, site et type d'utilisateur ciblé (ex. Appareils MR ELV EXM, Appareils SC ELV PRF), avec le type de jointure Entra systématiquement précisé pour éviter les erreurs de ciblage. Ces filtres sont devenus le mécanisme central de ciblage des stratégies spécifiques.
 
 Exploration des Ensembles de stratégies pour tenter de fiabiliser le pré-provisionnement Autopilot. Après mise en œuvre, le résultat s'est révélé peu concluant au regard de la complexité ajoutée : retour à une architecture reposant uniquement sur les filtres, jugée plus simple à maintenir et à faire évoluer.
 

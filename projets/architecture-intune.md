@@ -6,7 +6,11 @@ title: Refonte de l'architecture de gestion Intune
 
 ## Contexte
 
-À mon arrivée, la solution Entra ID venait d'être déployée et l'équipe en place gérait les stratégies via Intune Education, ce qui générait de nombreux conflits ainsi qu'une duplication importante des groupes. L'ensemble des groupes fonctionnait en mode affecté manuel, sur un parc de plus de 780 terminaux répartis sur deux établissements. Cette situation entraînait des délais de propagation des stratégies, une perte de visibilité sur "qui est configuré comment", et un fouillis grandissant dans la console d'administration Intune.
+À mon arrivée, la solution Entra ID venait d'être déployée et l'équipe en place gérait les stratégies via Intune Education, ce qui générait de nombreux conflits ainsi qu'une duplication importante des groupes. L'ensemble des groupes fonctionnait en mode affecté manuel, sur un parc de plus de 500 terminaux répartis sur deux établissements.
+
+Les stratégies étaient appliquées depuis Intune Education (Groupes > Paramètres de l'appareil Windows), soit sur l'ensemble du parc, soit via de grands groupes parapluies remontant des sous-groupes manuels par filière (administratif, pédagogique), à l'exception des enseignants, gérés depuis un groupe manuel dédié.
+
+On observait notamment des conflits récurrents sur les stratégies de fond d'écran de verrouillage, de PC partagé (désynchronisation OneDrive) et de configuration Wi-Fi, plusieurs stratégies équivalentes ou contradictoires étant appliquées aux mêmes appareils.
 
 ---
 

@@ -8,7 +8,7 @@ title: Gestion dynamique des terminaux avec Microsoft Entra ID
 
 L'environnement comprend plus de 1 190 utilisateurs répartis sur deux établissements ainsi qu'un parc de plus de 780 terminaux administrés via Microsoft Intune.
 
-La gestion manuelle des applications, configurations et stratégies devenait difficile à maintenir à grande échelle : chaque nouvel appareil ou changement de périmètre nécessitait une intervention manuelle sur les groupes d'affectation, avec un risque d'oubli ou d'erreur de ciblage.
+Une fois la convention de nommage des appareils refondue et les premiers filtres dynamiques mis en place (voir [Refonte de l'architecture de gestion Intune](/Portfolio/projets/architecture-intune.html)), l'étape suivante consistait à généraliser les groupes dynamiques Entra ID à l'ensemble du parc, pour que chaque appareil rejoigne automatiquement ses groupes d'affectation dès son intégration, sans intervention manuelle.
 
 ---
 
@@ -33,27 +33,21 @@ La gestion manuelle des applications, configurations et stratégies devenait dif
 
 ## Réalisation
 
-Conception et déploiement de plus de 120 groupes dynamiques et filtres Intune.
+Conception et déploiement de plus de 120 groupes dynamiques et filtres Intune, en s'appuyant sur la convention de nommage des appareils établie en amont.
 
 Les règles d'appartenance reposent notamment sur :
 
 - Les noms des appareils
-- Les Group Tags Windows Autopilot
 - Les attributs utilisateurs
+- Le type de jointure Entra ID (`deviceTrustType`)
 - Les besoins spécifiques des établissements
 
-**Convention de Group Tag Autopilot** : chaque tag encode l'établissement, le type de site/filière et l'usage de la machine (ex. `[Établissement] [Filière] [Salle/Usage]`, comme `"Site A Filière Labo"` ou `"Site B Filière Examen"`). Les groupes dynamiques Entra ID ciblent ensuite ces appareils via une règle du type :
-(device.devicePhysicalIds -any (_ -contains "[ZTDId]:[GroupTag]"))
-Cette approche permet de router automatiquement chaque appareil vers ses profils, applications et stratégies dès son enrôlement, sans créer de groupe manuel par salle ou par usage.
-
-**Automatisation via Microsoft Graph** : le Group Tag d'un appareil doit parfois être corrigé ou attribué en masse après coup (nouvel arrivage, changement d'affectation d'une salle). Un script PowerShell s'appuyant sur le module Microsoft.Graph.DeviceManagement.Enrollment automatise ce traitement :
-
-- Connexion à Microsoft Graph (`Connect-MgGraph`) avec le scope `DeviceManagementServiceConfig.ReadWrite.All`
-- Import d'une liste de numéros de série depuis un fichier CSV
-- Récupération des appareils Autopilot existants (`Get-MgDeviceManagementWindowsAutopilotDeviceIdentity`)
-- Mise à jour en masse du Group Tag pour chaque appareil correspondant (`Update-MgDeviceManagementWindowsAutopilotDeviceIdentityDeviceProperty`)
-
-Pour l'enrôlement initial des nouveaux postes, le Group Tag est directement assigné sur site au moment de la capture du hardware hash, via le script `Get-WindowsAutopilotInfo` (module communautaire WindowsAutopilotIntune), ce qui garantit que l'appareil rejoint son groupe dynamique dès sa première synchronisation Autopilot.
+**Exemple de règle dynamique de production** :
+(device.deviceTrustType -eq "AzureAD") and (device.displayName -startsWith "LP-MR-EXM-")
+<figure>
+  <img src="{{ site.baseurl }}/assets/images/entra-id/groupes-dynamiques-liste.png" alt="Liste des groupes dynamiques Entra ID">
+  <figcaption>Une partie des groupes dynamiques déployés pour la gestion du parc</figcaption>
+</figure>
 
 Ces groupes permettent l'affectation automatique :
 
@@ -63,14 +57,14 @@ Ces groupes permettent l'affectation automatique :
 - Des scripts PowerShell
 - Des scripts de remédiation
 
----
+**Automatisation via Microsoft Graph** : certaines corrections de masse (ex. réaffectation du Group Tag Autopilot d'un lot d'appareils après un changement de salle ou d'usage) sont automatisées via le module Microsoft.Graph.DeviceManagement.Enrollment :
 
-## Difficultés rencontrées
+- Connexion à Microsoft Graph (`Connect-MgGraph`) avec le scope `DeviceManagementServiceConfig.ReadWrite.All`
+- Import d'une liste de numéros de série depuis un fichier CSV
+- Récupération des appareils Autopilot existants (`Get-MgDeviceManagementWindowsAutopilotDeviceIdentity`)
+- Mise à jour en masse du Group Tag pour chaque appareil correspondant (`Update-MgDeviceManagementWindowsAutopilotDeviceIdentityDeviceProperty`)
 
-- Décalage entre l'enrôlement initial (Group Tag assigné sur site) et les corrections a posteriori (changement de salle, erreur de saisie), nécessitant un script de correction en masse plutôt qu'une modification manuelle appareil par appareil
-- Temps de propagation des règles dynamiques Entra ID, à anticiper lors des tests de mise en conformité
-
-Ce travail a par la suite servi de socle à une refonte plus large de l'architecture de gestion du parc, orientée vers les filtres Intune pour le ciblage des stratégies spécifiques (voir [Refonte de l'architecture de gestion Intune](/Portfolio/projets/architecture-intune.html)).
+Cette base de groupes dynamiques a ensuite servi de fondation à la mise en place d'Autopilot (voir [Windows Autopilot](/Portfolio/projets/autopilot.html)), en particulier pour distinguer les groupes dédiés au provisioning des groupes de production.
 
 ---
 

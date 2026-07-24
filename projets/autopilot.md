@@ -28,6 +28,7 @@ title: Windows Autopilot
 - Windows Autopilot
 - Microsoft Intune
 - Microsoft Entra ID
+- Microsoft Graph
 - Groupes dynamiques
 
 ---
@@ -77,6 +78,19 @@ L'assignation des profils repose sur une distinction claire entre les groupes dy
 
 ---
 
+## Maintenance
+
+Une fois le parc provisionné, les appareils changent régulièrement d'affectation (réaffectation d'une salle, changement d'usage), ce qui implique de corriger leur Group Tag Autopilot déjà enregistré. Un script PowerShell s'appuyant sur le module Microsoft.Graph.DeviceManagement.Enrollment automatise cette réaffectation en masse :
+
+- Connexion à Microsoft Graph (`Connect-MgGraph`) avec le scope `DeviceManagementServiceConfig.ReadWrite.All`
+- Import d'une liste de numéros de série à réaffecter depuis un fichier CSV
+- Récupération des appareils Autopilot existants (`Get-MgDeviceManagementWindowsAutopilotDeviceIdentity`)
+- Mise à jour du Group Tag pour chaque appareil correspondant (`Update-MgDeviceManagementWindowsAutopilotDeviceIdentityDeviceProperty`)
+
+Ce mécanisme évite une reprise manuelle appareil par appareil dans le portail Intune à chaque mouvement de parc, et s'appuie sur les mêmes groupes dynamiques Autopilot pour repropager automatiquement la bonne configuration une fois le tag corrigé.
+
+---
+
 ## Résultats
 
 - Suppression du recours aux images Acronis…
@@ -84,6 +98,7 @@ L'assignation des profils repose sur une distinction claire entre les groupes dy
 - Rattachement au tenant Entra ID automatisé…
 - Autopilot propagé à l'ensemble du parc, profils en production
 - Configuration adaptée automatiquement au type d'usage
+- Réaffectation des machines fiabilisée et industrialisée via script Graph
 
 <figure>
   <img src="{{ site.baseurl }}/assets/images/autopilot/appareils-autopilot-liste.png" alt="Liste des appareils Autopilot enregistrés">
@@ -97,6 +112,7 @@ L'assignation des profils repose sur une distinction claire entre les groupes dy
 - Windows Autopilot
 - Microsoft Intune
 - Microsoft Entra ID
+- Microsoft Graph
 - Groupes dynamiques
 - Industrialisation du déploiement de parc
 - Réduction de la dette de sécurité

@@ -25,9 +25,7 @@ Une fois la convention de nommage des appareils refondue et les premiers filtres
 
 - Microsoft Entra ID
 - Microsoft Intune
-- Windows Autopilot
 - PowerShell
-- Microsoft Graph
 
 ---
 
@@ -44,6 +42,7 @@ Les règles d'appartenance reposent notamment sur :
 
 **Exemple de règle dynamique de production** :
 (device.deviceTrustType -eq "AzureAD") and (device.displayName -startsWith "LP-MR-EXM-")
+
 <figure>
   <img src="{{ site.baseurl }}/assets/images/entra-id/groupes-dynamiques-liste.png" alt="Liste des groupes dynamiques Entra ID">
   <figcaption>Une partie des groupes dynamiques déployés pour la gestion du parc</figcaption>
@@ -57,14 +56,7 @@ Ces groupes permettent l'affectation automatique :
 - Des scripts PowerShell
 - Des scripts de remédiation
 
-**Automatisation via Microsoft Graph** : certaines corrections de masse (ex. réaffectation du Group Tag Autopilot d'un lot d'appareils après un changement de salle ou d'usage) sont automatisées via le module Microsoft.Graph.DeviceManagement.Enrollment :
-
-- Connexion à Microsoft Graph (`Connect-MgGraph`) avec le scope `DeviceManagementServiceConfig.ReadWrite.All`
-- Import d'une liste de numéros de série depuis un fichier CSV
-- Récupération des appareils Autopilot existants (`Get-MgDeviceManagementWindowsAutopilotDeviceIdentity`)
-- Mise à jour en masse du Group Tag pour chaque appareil correspondant (`Update-MgDeviceManagementWindowsAutopilotDeviceIdentityDeviceProperty`)
-
-Cette base de groupes dynamiques a ensuite servi de fondation à la mise en place d'Autopilot (voir [Windows Autopilot](/Portfolio/projets/autopilot.html)), en particulier pour distinguer les groupes dédiés au provisioning des groupes de production.
+Cette base de groupes dynamiques a ensuite servi de fondation à la mise en place d'Autopilot (voir [Windows Autopilot](/Portfolio/projets/autopilot.html)).
 
 ---
 
@@ -83,6 +75,5 @@ Cette base de groupes dynamiques a ensuite servi de fondation à la mise en plac
 - Microsoft Entra ID
 - Intune
 - PowerShell
-- Microsoft Graph
 - Gestion des identités
 - Automatisation
